@@ -1,31 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Louisville Paint Quotes</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Louisville Painting Quotes</title>
 <style>
-body { font-family: sans-serif; padding: 2em; background: #f5f5f5; }
-form { background: white; padding: 2em; border-radius: 10px; max-width: 500px; margin: auto; }
-input, select { width: 100%; margin: 0.5em 0; padding: 0.5em; }
-button { background: #4CAF50; color: white; padding: 0.75em; border: none; border-radius: 5px; cursor: pointer; }
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: #f7f9fc;
+margin: 0;
+padding: 0;
+color: #333;
+}
+.container {
+max-width: 480px;
+margin: 50px auto;
+background: white;
+border-radius: 8px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+padding: 30px 40px;
+}
+h1 {
+text-align: center;
+color: #2c3e50;
+margin-bottom: 10px;
+}
+p.subtitle {
+text-align: center;
+color: #7f8c8d;
+margin-bottom: 30px;
+font-size: 1.1rem;
+}
+label {
+display: block;
+margin-top: 15px;
+font-weight: 600;
+color: #34495e;
+}
+input[type="text"],
+input[type="tel"],
+select {
+width: 100%;
+padding: 10px 12px;
+margin-top: 6px;
+border: 1.5px solid #bdc3c7;
+border-radius: 5px;
+font-size: 1rem;
+transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus {
+outline: none;
+border-color: #2980b9;
+box-shadow: 0 0 6px #2980b9aa;
+}
+button {
+margin-top: 30px;
+width: 100%;
+padding: 14px 0;
+background: #2980b9;
+color: white;
+font-size: 1.2rem;
+font-weight: 700;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+button:hover {
+background: #1c5980;
+}
+.thank-you-message {
+text-align: center;
+font-size: 1.2rem;
+color: #27ae60;
+margin-top: 20px;
+display: none;
+}
 </style>
 </head>
 <body>
+<div class="container">
 <h1>Need House Painting in Louisville?</h1>
-<p>Get a free quote from trusted painters in your area.</p>
-<form method="POST" action="/submit">
-<input name="name" placeholder="Your Name" required>
-<input name="zip" placeholder="ZIP Code" required>
-<input name="phone" placeholder="Phone Number" required>
-<input name="email" placeholder="Your Email (optional)">
-<select name="job" required>
-<option value="">Select Job Type</option>
-<option>Interior</option>
-<option>Exterior</option>
-<option>Whole Home</option>
-<option>Touch-up</option>
-<option>Other</option>
+<p class="subtitle">Get a Free Quote Today — Interior, Exterior, Rentals, Touch-ups & More</p>
+
+<form id="quoteForm" action="https://formspree.io/f/mgebpljo" method="POST">
+<label for="name">Name *</label>
+<input type="text" id="name" name="name" required placeholder="Your full name" />
+
+<label for="zip">Zip Code *</label>
+<input type="text" id="zip" name="zip" required placeholder="e.g. 40202" pattern="\d{5}" title="Five digit zip code" />
+
+<label for="phone">Phone Number *</label>
+<input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" pattern="[\d\s\-\+\(\)]{7,15}" title="Valid phone number" />
+
+<label for="jobType">Type of Painting Job *</label>
+<select id="jobType" name="jobType" required>
+<option value="" disabled selected>Select one</option>
+<option value="Interior">Interior</option>
+<option value="Exterior">Exterior</option>
+<option value="Whole Home">Whole Home</option>
+<option value="Just a Room">Just a Room</option>
+<option value="Other">Other</option>
 </select>
+
 <button type="submit">Get My Free Quote</button>
 </form>
+
+<div class="thank-you-message" id="thankYouMessage">
+Thank you! A painter will contact you shortly.
+</div>
+</div>
+
+<script>
+// Show thank-you message on successful form submission (Formspree returns 200)
+const form = document.getElementById('quoteForm');
+const thankYou = document.getElementById('thankYouMessage');
+
+form.addEventListener('submit', function (e) {
+e.preventDefault();
+
+const formData = new FormData(form);
+
+fetch(form.action, {
+method: form.method,
+body: formData,
+headers: {
+'Accept': 'application/json'
+},
+}).then(response => {
+if (response.ok) {
+form.style.display = 'none';
+thankYou.style.display = 'block';
+} else {
+alert('Oops! There was a problem submitting your form.');
+}
+}).catch(() => {
+alert('Oops! There was a problem submitting your form.');
+});
+});
+</script>
 </body>
 </html>
