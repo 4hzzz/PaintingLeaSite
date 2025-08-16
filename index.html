@@ -1,145 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Louisville Painting Quotes</title>
-<style>
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background: #f7f9fc;
-margin: 0;
-padding: 0;
-color: #333;
-}
-.container {
-max-width: 480px;
-margin: 50px auto;
-background: white;
-border-radius: 8px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-padding: 30px 40px;
-}
-h1 {
-text-align: center;
-color: #2c3e50;
-margin-bottom: 10px;
-}
-p.subtitle {
-text-align: center;
-color: #7f8c8d;
-margin-bottom: 30px;
-font-size: 1.1rem;
-}
-label {
-display: block;
-margin-top: 15px;
-font-weight: 600;
-color: #34495e;
-}
-input[type="text"],
-input[type="tel"],
-select {
-width: 100%;
-padding: 10px 12px;
-margin-top: 6px;
-border: 1.5px solid #bdc3c7;
-border-radius: 5px;
-font-size: 1rem;
-transition: border-color 0.3s ease;
-}
-input[type="text"]:focus,
-input[type="tel"]:focus,
-select:focus {
-outline: none;
-border-color: #2980b9;
-box-shadow: 0 0 6px #2980b9aa;
-}
-button {
-margin-top: 30px;
-width: 100%;
-padding: 14px 0;
-background: #2980b9;
-color: white;
-font-size: 1.2rem;
-font-weight: 700;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-transition: background-color 0.3s ease;
-}
-button:hover {
-background: #1c5980;
-}
-.thank-you-message {
-text-align: center;
-font-size: 1.2rem;
-color: #27ae60;
-margin-top: 20px;
-display: none;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Free Painting Quotes | Louisville • Henderson • Evansville</title>
+  <meta name="description" content="Get fast, free interior & exterior painting quotes in Louisville KY, Henderson KY, and Evansville IN. Local, vetted painters—ready this week." />
+  <link rel="preload" as="image" href="/images/ricky-singh-BdsRtr03Wko-unsplash.jpg" />
+  <link rel="preload" as="image" href="/images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free Painting Quotes | Louisville • Henderson • Evansville" />
+  <meta property="og:description" content="Fast, free interior & exterior painting quotes. Local, vetted pros in Louisville, Henderson, and Evansville." />
+  <meta property="og:url" content="https://proqoutes.com" />
+  <meta property="og:image" content="/images/og-paint.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Local SEO JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"ProQoutes",
+    "areaServed":["Louisville, KY","Henderson, KY","Evansville, IN"],
+    "url":"https://proqoutes.com",
+    "description":"Interior and exterior painting quotes for homeowners in Louisville, Henderson, and Evansville.",
+    "serviceType":"Residential painting"
+  }
+  </script>
+
+  <style>
+    :root { --brand:#0f172a; --accent:#2563eb; --ink:#0b1220; --muted:#64748b; --bg:#f8fafc; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; color:var(--ink); background:#fff; }
+
+    header { background:var(--brand); color:#fff; position:sticky; top:0; z-index:50; }
+    .navwrap { max-width:1100px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
+    nav a { color:#fff; text-decoration:none; opacity:.9; margin-left:16px; font-weight:600; }
+    nav a:hover { opacity:1; text-decoration:underline; }
+
+    .hero { position:relative; height:56vh; min-height:420px; overflow:hidden; }
+    .slides { position:absolute; inset:0; }
+    .slide { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity .9s ease; }
+    .slide.active { opacity:1; }
+    .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)); }
+    .heroInner { position:relative; z-index:2; height:100%; display:flex; align-items:center; }
+    .heroBox { max-width:1100px; margin:0 auto; padding:0 20px; color:#fff; }
+    .hero h1 { font-size:clamp(28px,5vw,44px); margin:0 0 10px; }
+    .hero p { font-size:clamp(16px,2.6vw,20px); margin:0 0 16px; opacity:.95; }
+    .cta { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { background:var(--accent); color:#fff; padding:12px 18px; border-radius:10px; border:0; cursor:pointer; font-weight:700; }
+    .btn.secondary { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.35); }
+
+    .section { padding:40px 20px; background:var(--bg); }
+    .container { max-width:1100px; margin:0 auto; }
+    h2 { margin:0 0 12px; font-size:26px; }
+    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
+    @media (min-width:900px){ .grid-2 { grid-template-columns:1fr 1fr; } }
+
+    .card { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 2px 10px rgba(2,6,23,.04); }
+    label { display:block; font-weight:600; margin:10px 0 6px; }
+    input, select, textarea { width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:10px; font-size:16px; }
+    textarea { resize:vertical; min-height:110px; }
+    .row { display:grid; gap:12px; grid-template-columns:1fr; }
+    @media (min-width:700px){ .row-2 { grid-template-columns:1fr 1fr; } }
+    .tiny { font-size:12px; color:var(--muted); }
+
+    footer { padding:40px 20px; color:#475569; background:#f1f5f9; }
+    footer .foot { max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; }
+
+    .adslot { background:#eef2ff; border:1px dashed #c7d2fe; border-radius:12px; padding:16px; text-align:center; color:#4f46e5; font-weight:600; }
+  </style>
 </head>
 <body>
-<div class="container">
-<h1>Need House Painting in Louisville?</h1>
-<p class="subtitle">Get a Free Quote Today — Interior, Exterior, Rentals, Touch-ups & More</p>
 
-<form id="quoteForm" action="https://formspree.io/f/mldnkzwr" method="POST">
-<label for="name">Name *</label>
-<input type="text" id="name" name="name" required placeholder="Your full name" />
+<header>
+  <div class="navwrap">
+    <strong>ProQoutes</strong>
+    <nav>
+      <a href="#quote">Get Quote</a>
+      <a href="#areas">Service Areas</a>
+      <a href="#painters">For Painters</a>
+    </nav>
+  </div>
+</header>
 
-<label for="zip">Zip Code *</label>
-<input type="text" id="zip" name="zip" required placeholder="e.g. 40202" pattern="\d{5}" title="Five digit zip code" />
-
-<label for="phone">Phone Number *</label>
-<input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" pattern="[\d\s\-\+\(\)]{7,15}" title="Valid phone number" />
-
-<label for="jobType">Type of Painting Job *</label>
-<select id="jobType" name="jobType" required>
-<option value="" disabled selected>Select one</option>
-<option value="Interior">Interior</option>
-<option value="Exterior">Exterior</option>
-<option value="Whole Home">Whole Home</option>
-<option value="Just a Room">Just a Room</option>
-<option value="Other">Other</option>
-</select>
-
-<button type="submit">Get My Free Quote</button>
-</form>
-
-<div class="thank-you-message" id="thankYouMessage">
-Thank you! A painter will contact you shortly.
-</div>
-</div>
+<!-- HERO SLIDESHOW -->
+<section class="hero" aria-label="Painting showcase">
+  <div class="slides">
+    <div class="slide active" style="background-image:url('/images/ricky-singh-BdsRtr03Wko-unsplash.jpg')"></div>
+    <div class="slide" style="background-image:url('/images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg')"></div>
+    <div class="slide" style="background-image:url('/images/paint3.jpg')"></div>
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="heroInner">
+    <div class="heroBox">
+      <h1>Fast, Free Painting Quotes</h1>
+      <p>Serving Louisville &amp; Henderson, KY and Evansville, IN. Interior &amp; exterior pros ready this week.</p>
+      <div class="cta">
+        <a class="btn" href="#quote">Get my free quote</a>
+        <a class="btn secondary" href="#painters">Are you a painter?</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
-// Show thank-you message on successful form submission (Formspree returns 200)
-const form = document.getElementById('quoteForm');
-const thankYou = document.getElementById('thankYouMessage');
-
-form.addEventListener('submit', function (e) {
-e.preventDefault();
-
-const formData = new FormData(form);
-
-fetch(form.action, {
-method: form.method,
-body: formData,
-headers: {
-'Accept': 'application/json'
-},
-}).then(response => {
-if (response.ok) {
-form.style.display = 'none';
-thankYou.style.display = 'block';
-} else {
-alert('Oops! There was a problem submitting your form.');
-}
-}).catch(() => {
-alert('Oops! There was a problem submitting your form.');
-});
-});
+  const slides = document.querySelectorAll('.slide');
+  let i = 0; setInterval(()=>{ slides[i].classList.remove('active'); i=(i+1)%slides.length; slides[i].classList.add('active'); }, 4000);
 </script>
+
 </body>
 </html>
