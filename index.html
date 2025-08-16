@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -6,10 +6,7 @@
 <title>ProQoutes • Fast Painting Quotes | Louisville • Henderson • Evansville</title>
 <meta name="description" content="Bright, fast painting quotes in Louisville & Henderson, KY and Evansville, IN — plus surrounding areas. Interior & exterior pros ready this week.">
 
-<!-- Optional: nicer brand font just for the logo text -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-
-<!-- Preload hero images for a snappy first paint -->
+<!-- Preload hero images -->
 <link rel="preload" as="image" href="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg">
 <link rel="preload" as="image" href="images/ricky-singh-BdsRtr03Wko-unsplash.jpg">
 <link rel="preload" as="image" href="images/pexels-pixabay-221027.jpg">
@@ -19,136 +16,121 @@
 <style>
   :root{
     --ink:#0b132b;
-    --brand:#6d28d9;   /* vivid purple */
-    --accent:#2563eb;  /* blue */
-    --green:#22c55e;   /* lively green */
-    --bg:#f7fbff;
+    --brand:#6d28d9;
+    --accent:#2563eb;
+    --green:#22c55e;
+    --bg:#f9fbff;
     --card:#ffffff;
     --muted:#64748b;
   }
 
   *{box-sizing:border-box}
-  html,body{height:100%}
-  html{scroll-behavior:smooth}
   body{
     margin:0;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: Inter, system-ui, sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(1200px 600px at 15% -10%, rgba(109,40,217,.18), transparent 60%),
-      radial-gradient(900px 600px at 100% 0%, rgba(34,197,94,.15), transparent 60%),
+      radial-gradient(1200px 600px at 15% -10%, rgba(109,40,217,.15), transparent 60%),
+      radial-gradient(900px 600px at 100% 0%, rgba(34,197,94,.12), transparent 60%),
       var(--bg);
-    cursor: default; /* arrow everywhere by default */
   }
-  input, textarea, select { cursor: text; }
-  button, .btn, a { cursor: pointer; }
 
-  /* Header + tabs */
+  input, textarea, select { cursor:text; }
+  button, .btn, a { cursor:pointer; }
+
   header{
     position:sticky; top:0; z-index:50;
-    background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 60%, var(--green) 100%);
+    background:linear-gradient(90deg, var(--brand) 0%, var(--accent) 60%, var(--green) 100%);
     color:#fff; box-shadow:0 6px 24px rgba(0,0,0,.1);
   }
-  .wrap{
-    max-width:1100px;margin:0 auto;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:12px 18px
-  }
+  .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
   .brand{
-    font-family: Poppins, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    font-weight:800;
-    font-size: clamp(26px, 4.2vw, 40px); /* bigger per your request */
-    letter-spacing:.2px; line-height:1;
-    background: linear-gradient(135deg, #ffffff, #e6f2ff);
-    -webkit-background-clip: text; background-clip: text;
-    color: transparent;
-    text-shadow: 0 1px 0 rgba(0,0,0,.08);
-    user-select:none;
+    font-size:clamp(28px,6vw,52px);
+    font-weight:900;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    text-shadow:0 2px 8px rgba(0,0,0,.4);
   }
-  .tabs{display:flex; gap:6px; flex-wrap:wrap;}
+
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;}
   .tab-btn{
-    border:0; background:rgba(255,255,255,.18); color:#fff;
-    padding:8px 12px; border-radius:12px; font-weight:700;
+    border:0;background:rgba(255,255,255,.2);color:#fff;
+    padding:10px 14px;border-radius:12px;font-weight:700;
     transition:transform .12s ease, background .2s ease;
   }
   .tab-btn[aria-selected="true"]{
-    background:#fff; color:var(--ink); box-shadow:0 6px 18px rgba(0,0,0,.12);
-    transform: translateY(-1px);
+    background:#fff;color:var(--ink);
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+    transform:translateY(-1px);
   }
-  .tab-btn:focus-visible{outline:3px solid #fff; outline-offset:2px}
 
-  main{max-width:1100px; margin:20px auto; padding:0 18px 40px;}
+  main{max-width:1100px;margin:20px auto;padding:0 18px 40px;}
 
   .card{
-    background:var(--card); border:1px solid #e2e8f0; border-radius:18px;
-    padding:18px; box-shadow:0 10px 30px rgba(2,6,23,.06);
-  }
-  .grid{display:grid; gap:18px}
-  .g-2{grid-template-columns:1fr}
-  @media(min-width:900px){ .g-2{grid-template-columns:1.2fr .8fr} }
-
-  h1{margin:0 0 10px; font-size:clamp(26px, 5vw, 44px)}
-  h2{margin:0 0 10px; font-size:clamp(20px, 3vw, 28px)}
-  p.lead{margin:0 0 16px; color:#111827}
-
-  label{display:block; font-weight:700; margin:10px 0 6px}
-  input, textarea, select{
-    width:100%; font-size:16px; padding:12px 14px;
-    border:1.4px solid #cbd5e1; border-radius:12px; background:#fff;
-  }
-  textarea{min-height:110px; resize:vertical}
-  .row{display:grid; gap:12px; grid-template-columns:1fr}
-  @media(min-width:700px){ .row-2{grid-template-columns:1fr 1fr} }
-
-  .btn{
-    display:inline-block; border:0; border-radius:12px; padding:12px 18px;
-    background:linear-gradient(135deg, var(--brand), var(--accent));
-    color:#fff; font-weight:800; text-decoration:none;
-    box-shadow:0 10px 24px rgba(37,99,235,.35);
-    transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
-  }
-  .btn:hover{ transform: translateY(-1px); filter:brightness(1.03); box-shadow:0 14px 28px rgba(37,99,235,.45); }
-  .btn.ghost{
-    background:#fff; color:var(--ink); border:1px solid #e5e7eb;
-    box-shadow:0 6px 18px rgba(15,23,42,.08);
+    background:var(--card);border:1px solid #e2e8f0;border-radius:18px;
+    padding:18px;box-shadow:0 10px 30px rgba(2,6,23,.06);
   }
 
-  /* HERO with real <img> slides */
+  /* HERO */
   .hero{
-    position:relative; border-radius:22px; overflow:hidden;
-    height:56vh; min-height:420px; margin-bottom:18px;
+    position:relative;border-radius:22px;overflow:hidden;
+    height:56vh;min-height:420px;margin-bottom:18px;
   }
-  .slides{position:absolute; inset:0;}
+  .slides{position:absolute;inset:0;}
   .slide{
-    position:absolute; inset:0; width:100%; height:100%;
-    object-fit:cover; object-position:center;
-    opacity:0; transition:opacity 1.1s ease;
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+    opacity:0;transition:opacity 1.4s ease;
   }
   .slide.active{opacity:1}
-  .scrim{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.6));}
+  .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.6));}
   .heroContent{
-    position:relative; z-index:2; color:#fff; height:100%;
-    display:flex; align-items:center; justify-content:center; text-align:center; padding:0 16px;
+    position:relative;z-index:2;color:#fff;height:100%;
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px;
+  }
+  .heroContent h1{
+    font-size:clamp(26px,5vw,48px);
+    margin-bottom:10px;
+    text-shadow:2px 2px 5px rgba(0,0,0,.6);
+  }
+  .heroContent p.lead{
+    font-size:clamp(16px,2.5vw,22px);
+    font-weight:600;
+    color:#fff;
+    /* white outline for readability */
+    text-shadow:
+      -1px -1px 3px #fff,
+       1px -1px 3px #fff,
+      -1px  1px 3px #fff,
+       1px  1px 3px #fff;
   }
   .badges{
-    position:absolute; bottom:10px; right:12px; z-index:2; color:#fff; font-size:12px; opacity:.95;
-    background:rgba(0,0,0,.25); padding:6px 10px; border-radius:10px;
+    position:absolute;bottom:10px;right:12px;z-index:2;
+    color:#fff;font-size:12px;opacity:.95;
+    background:rgba(0,0,0,.35);padding:6px 10px;border-radius:10px;
   }
 
-  /* Tabs content */
-  [role="tabpanel"]{ display:none; }
-  [role="tabpanel"].active{ display:block; }
+  /* lively borders / accents outside hero */
+  main::before{
+    content:"";position:absolute;top:0;left:0;width:100%;height:100%;
+    background:
+      repeating-linear-gradient(45deg, rgba(109,40,217,.05) 0 20px, transparent 20px 40px),
+      repeating-linear-gradient(-45deg, rgba(37,99,235,.05) 0 20px, transparent 20px 40px);
+    z-index:-1;
+  }
 
-  footer{ color:#475569; padding:30px 18px 50px; text-align:center }
-  .muted{ color:var(--muted) }
+  [role="tabpanel"]{display:none;}
+  [role="tabpanel"].active{display:block;}
+
+  footer{color:#475569;padding:30px 18px 50px;text-align:center}
+  .muted{color:var(--muted)}
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap">
     <div class="brand">ProQoutes</div>
-    <div class="tabs" role="tablist" aria-label="Site sections">
+    <div class="tabs" role="tablist">
       <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-home" id="tab-home-btn">Home</button>
       <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-quote" id="tab-quote-btn">Get Quote</button>
       <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-areas" id="tab-areas-btn">Service Areas</button>
@@ -158,237 +140,41 @@
 </header>
 
 <main>
-  <!-- HOME -->
-  <section id="tab-home" role="tabpanel" aria-labelledby="tab-home-btn" class="active">
-    <div class="hero card" aria-label="Painting showcase">
+  <section id="tab-home" role="tabpanel" class="active">
+    <div class="hero card">
       <div class="slides">
-        <img class="slide active" src="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg" alt="Fresh painted interior">
-        <img class="slide" src="images/ricky-singh-BdsRtr03Wko-unsplash.jpg" alt="Painter at work">
-        <img class="slide" src="images/pexels-pixabay-221027.jpg" alt="House exterior freshly painted">
-        <img class="slide" src="images/pexels-shkrabaanthony-5493658.jpg" alt="Painter prepping wall">
-        <img class="slide" src="images/pexels-blue-bird-7218525.jpg" alt="Team painting living room">
+        <img class="slide active" src="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg" alt="">
+        <img class="slide" src="images/ricky-singh-BdsRtr03Wko-unsplash.jpg" alt="">
+        <img class="slide" src="images/pexels-pixabay-221027.jpg" alt="">
+        <img class="slide" src="images/pexels-shkrabaanthony-5493658.jpg" alt="">
+        <img class="slide" src="images/pexels-blue-bird-7218525.jpg" alt="">
       </div>
-      <div class="scrim" aria-hidden="true"></div>
+      <div class="scrim"></div>
       <div class="heroContent">
         <div>
           <h1>Fast, Friendly Painting Quotes</h1>
-          <p class="lead">Louisville &amp; Henderson, KY • Evansville, IN — <strong>and surrounding areas</strong>. Interior &amp; exterior pros ready this week.</p>
-          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-            <a class="btn" data-goto="tab-quote">Get my free quote</a>
-            <a class="btn ghost" data-goto="tab-painters">Are you a painter?</a>
-          </div>
+          <p class="lead">Henderson, KY • Evansville, IN — and surrounding areas. Interior &amp; exterior pros ready this week.</p>
         </div>
       </div>
       <div class="badges">Licensed &amp; Insured • Local Pros • No obligation</div>
-    </div>
-
-    <div class="grid g-2">
-      <div class="card">
-        <h2>Why homeowners choose us</h2>
-        <ul>
-          <li>Local, vetted painters with fast responses</li>
-          <li>Clear, competitive quotes</li>
-          <li>No spam—just pros ready to work</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>How it works</h2>
-        <ol>
-          <li>Tell us about your project (1–2 minutes).</li>
-          <li>We match you with available local pros.</li>
-          <li>You get fast, fair quotes—no pressure.</li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- GET QUOTE -->
-  <section id="tab-quote" role="tabpanel" aria-labelledby="tab-quote-btn">
-    <div class="grid g-2">
-      <div class="card">
-        <h2>Request your free quote</h2>
-        <form id="leadForm" action="https://formspree.io/f/mldnkzwr" method="POST">
-          <div class="row row-2">
-            <div>
-              <label for="name">Name *</label>
-              <input id="name" name="name" required placeholder="Your full name">
-            </div>
-            <div>
-              <label for="phone">Phone *</label>
-              <input id="phone" name="phone" inputmode="tel" required placeholder="(123) 456-7890">
-            </div>
-          </div>
-
-          <div class="row row-2">
-            <div>
-              <label for="zip">Zip Code *</label>
-              <input id="zip" name="zip" required placeholder="e.g. 40202" pattern="\d{5}">
-            </div>
-            <div>
-              <label for="city">City *</label>
-              <select id="city" name="city" required>
-                <option value="" disabled selected>Select one</option>
-                <option>Louisville, KY</option>
-                <option>Henderson, KY</option>
-                <option>Evansville, IN</option>
-                <option>Surrounding Area (KY/IN)</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="row row-2">
-            <div>
-              <label for="type">Project Type *</label>
-              <select id="type" name="type" required>
-                <option value="" disabled selected>Interior or Exterior?</option>
-                <option>Interior</option>
-                <option>Exterior</option>
-                <option>Both</option>
-              </select>
-            </div>
-            <div>
-              <label for="timeline">Timeline</label>
-              <select id="timeline" name="timeline">
-                <option>As soon as possible</option>
-                <option>1–2 weeks</option>
-                <option>3–4 weeks</option>
-                <option>Flexible</option>
-              </select>
-            </div>
-          </div>
-
-          <label for="details">Project Details</label>
-          <textarea id="details" name="details" placeholder="Rooms, square footage, prep/repair, paint provided?, timeframe…"></textarea>
-
-          <div style="margin-top:14px; display:flex; gap:10px; align-items:center;">
-            <button class="btn" type="submit">Get free quotes</button>
-            <small class="muted">By submitting, you agree to be contacted by local pros.</small>
-          </div>
-          <p id="leadThanks" style="display:none; color:#16a34a; font-weight:700; margin-top:10px;">Thanks! A painter will contact you shortly.</p>
-        </form>
-      </div>
-
-      <div class="card">
-        <h2>Tips for faster quotes</h2>
-        <ul>
-          <li>List rooms or exterior sides to paint</li>
-          <li>Approximate square footage</li>
-          <li>Your ideal start date</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- AREAS -->
-  <section id="tab-areas" role="tabpanel" aria-labelledby="tab-areas-btn">
-    <div class="card">
-      <h2>Service Areas</h2>
-      <p>We proudly serve:</p>
-      <ul>
-        <li><strong>Louisville, Kentucky</strong> and surrounding areas</li>
-        <li><strong>Henderson, Kentucky</strong> and surrounding areas</li>
-        <li><strong>Evansville, Indiana</strong> and surrounding areas</li>
-      </ul>
-      <p class="muted">More cities coming soon.</p>
-    </div>
-  </section>
-
-  <!-- PAINTERS -->
-  <section id="tab-painters" role="tabpanel" aria-labelledby="tab-painters-btn">
-    <div class="grid g-2">
-      <div class="card">
-        <h2>For Painters</h2>
-        <p>Join our network and get local homeowner leads. <strong>Pay only when you want a lead</strong> (launch plan).</p>
-        <form id="painterForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
-          <label for="business">Business Name *</label>
-          <input id="business" name="business" required />
-          <label for="pemail">Email *</label>
-          <input id="pemail" name="email" type="email" required />
-          <label for="pareas">Service Areas</label>
-          <input id="pareas" name="areas" placeholder="Louisville; Henderson; Evansville; Surrounding Areas" />
-          <label for="pspec">Specialties</label>
-          <input id="pspec" name="specialties" placeholder="Interior, Exterior, Cabinets, Commercial…" />
-          <button class="btn" type="submit" style="margin-top:10px;">Join the network</button>
-          <p id="painterThanks" style="display:none; color:#16a34a; font-weight:700; margin-top:10px;">Thanks! We’ll email your first opportunities soon.</p>
-        </form>
-      </div>
-      <div class="card">
-        <h2>How pay-per-lead works</h2>
-        <ol>
-          <li>Homeowner submits a project in your area.</li>
-          <li>We email a lead preview (no contact info yet) with a payment link.</li>
-          <li><strong>First to purchase</strong> unlocks full contact details.</li>
-        </ol>
-        <p class="muted">As volume grows, we’ll add round-robin routing and monthly caps. Stripe-secured payments.</p>
-      </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div>© <span id="yr"></span> ProQoutes • <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></div>
+  <div>© <span id="yr"></span> ProQoutes</div>
 </footer>
 
 <script>
-  // Slideshow: 7s per slide + pause on hover
+  // Slideshow
   const slides = document.querySelectorAll('.slide');
-  const hero = document.querySelector('.hero');
-  let s = 0, timer = null, paused = false;
-
-  function showNext(){
-    if(!slides.length || paused) return;
+  let s=0;
+  setInterval(()=>{
     slides[s].classList.remove('active');
-    s = (s + 1) % slides.length;
+    s=(s+1)%slides.length;
     slides[s].classList.add('active');
-  }
-  function start(){ if(timer) clearInterval(timer); timer = setInterval(showNext, 7000); }
-  function stop(){ if(timer) clearInterval(timer); timer = null; }
-
-  hero?.addEventListener('mouseenter', ()=>{ paused = true; stop(); });
-  hero?.addEventListener('mouseleave', ()=>{ paused = false; start(); });
-
-  start();
-
-  // Tabs behavior (ARIA friendly)
-  const tabButtons = document.querySelectorAll('[role="tab"]');
-  const tabPanels = document.querySelectorAll('[role="tabpanel"]');
-  function activateTab(id){
-    tabButtons.forEach(b=>{
-      const selected = (b.getAttribute('aria-controls') === id);
-      b.setAttribute('aria-selected', selected ? 'true' : 'false');
-    });
-    tabPanels.forEach(p=>{
-      p.classList.toggle('active', p.id === id);
-    });
-    document.querySelector('main').scrollIntoView({behavior:'smooth', block:'start'});
-  }
-  tabButtons.forEach(btn=>{
-    btn.addEventListener('click', ()=> activateTab(btn.getAttribute('aria-controls')));
-  });
-  document.querySelectorAll('[data-goto]').forEach(el=>{
-    el.addEventListener('click', ()=> activateTab(el.getAttribute('data-goto')));
-  });
-
-  // AJAX forms (Formspree)
-  function wireAjaxForm(formId, thanksId){
-    const form = document.getElementById(formId);
-    const thanks = document.getElementById(thanksId);
-    if(!form) return;
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const fd = new FormData(form);
-      try{
-        const res = await fetch(form.action, { method: form.method, body: fd, headers:{Accept:'application/json'} });
-        if(res.ok){ form.reset(); if(thanks) thanks.style.display='block'; }
-        else { alert('Oops! There was a problem submitting your form.'); }
-      }catch(_){ alert('Network error. Please try again.'); }
-    });
-  }
-  wireAjaxForm('leadForm','leadThanks');
-  wireAjaxForm('painterForm','painterThanks');
-
-  // Year
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  },7000); // slowed to 7s
+  document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
