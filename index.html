@@ -5,78 +5,39 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Free Painting Quotes | Louisville • Henderson • Evansville</title>
   <meta name="description" content="Get fast, free interior & exterior painting quotes in Louisville KY, Henderson KY, and Evansville IN. Local, vetted painters—ready this week." />
-  <link rel="preload" as="image" href="/images/ricky-singh-BdsRtr03Wko-unsplash.jpg" />
-  <link rel="preload" as="image" href="/images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg" />
 
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Free Painting Quotes | Louisville • Henderson • Evansville" />
-  <meta property="og:description" content="Fast, free interior & exterior painting quotes. Local, vetted pros in Louisville, Henderson, and Evansville." />
-  <meta property="og:url" content="https://proqoutes.com" />
-  <meta property="og:image" content="/images/og-paint.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Local SEO JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"ProQoutes",
-    "areaServed":["Louisville, KY","Henderson, KY","Evansville, IN"],
-    "url":"https://proqoutes.com",
-    "description":"Interior and exterior painting quotes for homeowners in Louisville, Henderson, and Evansville.",
-    "serviceType":"Residential painting"
-  }
-  </script>
+  <!-- Make sure your uploaded images are inside an /images folder in the root of your repo -->
+  <link rel="preload" as="image" href="images/ricky-singh-BdsRtr03Wko-unsplash.jpg" />
+  <link rel="preload" as="image" href="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg" />
 
   <style>
-    :root { --brand:#0f172a; --accent:#2563eb; --ink:#0b1220; --muted:#64748b; --bg:#f8fafc; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; color:var(--ink); background:#fff; }
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; }
+    header { background:#0f172a; color:#fff; padding:14px 20px; position:sticky; top:0; z-index:50; }
+    header nav a { color:#fff; margin-left:16px; text-decoration:none; font-weight:bold; }
+    header nav a:hover { text-decoration:underline; }
 
-    header { background:var(--brand); color:#fff; position:sticky; top:0; z-index:50; }
-    .navwrap { max-width:1100px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
-    nav a { color:#fff; text-decoration:none; opacity:.9; margin-left:16px; font-weight:600; }
-    nav a:hover { opacity:1; text-decoration:underline; }
-
-    .hero { position:relative; height:56vh; min-height:420px; overflow:hidden; }
+    .hero { position:relative; height:60vh; min-height:420px; overflow:hidden; }
     .slides { position:absolute; inset:0; }
-    .slide { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity .9s ease; }
+    .slide { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity 1s ease; }
     .slide.active { opacity:1; }
-    .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)); }
-    .heroInner { position:relative; z-index:2; height:100%; display:flex; align-items:center; }
-    .heroBox { max-width:1100px; margin:0 auto; padding:0 20px; color:#fff; }
-    .hero h1 { font-size:clamp(28px,5vw,44px); margin:0 0 10px; }
-    .hero p { font-size:clamp(16px,2.6vw,20px); margin:0 0 16px; opacity:.95; }
-    .cta { display:flex; gap:12px; flex-wrap:wrap; }
-    .btn { background:var(--accent); color:#fff; padding:12px 18px; border-radius:10px; border:0; cursor:pointer; font-weight:700; }
-    .btn.secondary { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.35); }
+    .scrim { position:absolute; inset:0; background:rgba(0,0,0,0.4); }
+    .heroInner { position:relative; z-index:2; display:flex; align-items:center; justify-content:center; height:100%; text-align:center; color:#fff; }
+    .hero h1 { font-size:2.5rem; margin:0 0 10px; }
+    .hero p { font-size:1.2rem; margin:0 0 20px; }
+    .btn { background:#2563eb; color:#fff; padding:12px 18px; border-radius:10px; border:0; font-weight:bold; text-decoration:none; }
+    .btn.secondary { background:rgba(255,255,255,0.2); border:1px solid #fff; }
 
-    .section { padding:40px 20px; background:var(--bg); }
-    .container { max-width:1100px; margin:0 auto; }
-    h2 { margin:0 0 12px; font-size:26px; }
-    .grid { display:grid; gap:20px; grid-template-columns:1fr; }
-    @media (min-width:900px){ .grid-2 { grid-template-columns:1fr 1fr; } }
-
-    .card { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 2px 10px rgba(2,6,23,.04); }
-    label { display:block; font-weight:600; margin:10px 0 6px; }
-    input, select, textarea { width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:10px; font-size:16px; }
-    textarea { resize:vertical; min-height:110px; }
-    .row { display:grid; gap:12px; grid-template-columns:1fr; }
-    @media (min-width:700px){ .row-2 { grid-template-columns:1fr 1fr; } }
-    .tiny { font-size:12px; color:var(--muted); }
-
-    footer { padding:40px 20px; color:#475569; background:#f1f5f9; }
-    footer .foot { max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; }
-
-    .adslot { background:#eef2ff; border:1px dashed #c7d2fe; border-radius:12px; padding:16px; text-align:center; color:#4f46e5; font-weight:600; }
+    section { padding:60px 20px; max-width:1000px; margin:0 auto; }
+    section h2 { margin-bottom:20px; }
+    form input, form textarea { width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px; }
+    form button { background:#2563eb; color:#fff; padding:12px 18px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="navwrap">
-    <strong>ProQoutes</strong>
+  <div style="display:flex; justify-content:space-between; align-items:center; max-width:1100px; margin:0 auto;">
+    <strong>ProQuotes</strong>
     <nav>
       <a href="#quote">Get Quote</a>
       <a href="#areas">Service Areas</a>
@@ -86,28 +47,163 @@
 </header>
 
 <!-- HERO SLIDESHOW -->
-<section class="hero" aria-label="Painting showcase">
+<section class="hero">
   <div class="slides">
-    <div class="slide active" style="background-image:url('/images/ricky-singh-BdsRtr03Wko-unsplash.jpg')"></div>
-    <div class="slide" style="background-image:url('/images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg')"></div>
-    <div class="slide" style="background-image:url('/images/paint3.jpg')"></div>
+    <div class="slide active" style="background-image:url('images/ricky-singh-BdsRtr03Wko-unsplash.jpg')"></div>
+    <div class="slide" style="background-image:url('images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg')"></div>
+    <div class="slide" style="background-image:url('images/paint3.jpg')"></div>
   </div>
-  <div class="scrim" aria-hidden="true"></div>
+  <div class="scrim"></div>
   <div class="heroInner">
-    <div class="heroBox">
+    <div>
       <h1>Fast, Free Painting Quotes</h1>
       <p>Serving Louisville &amp; Henderson, KY and Evansville, IN. Interior &amp; exterior pros ready this week.</p>
-      <div class="cta">
-        <a class="btn" href="#quote">Get my free quote</a>
-        <a class="btn secondary" href="#painters">Are you a painter?</a>
-      </div>
+      <a class="btn" href="#quote">Get my free quote</a>
+      <a class="btn secondary" href="#painters">Are you a painter?</a>
     </div>
   </div>
 </section>
 
+<!-- QUOTE FORM -->
+<section id="quote">
+  <h2>Request Your Free Quote</h2>
+  <form>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <select name="service">
+      <option value="interior">Interior Painting</option>
+      <option value="exterior">Exterior Painting</option>
+    </select>
+    <textarea name="details" placeholder="Project description"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<!-- AREAS -->
+<section id="areas">
+  <h2>Our Service Areas</h2>
+  <p>We proudly serve Louisville, KY • Henderson, KY • Evansville, IN</p>
+</section>
+
+<!-- PAINTERS -->
+<section id="painters">
+  <h2>For Painters</h2>
+  <p>Join our network of trusted painting professionals. We connect you with ready-to-hire homeowners. No upfront costs—only pay when you get a lead.</p>
+  <form>
+    <input type="text" name="company" placeholder="Company Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Phone" required>
+    <button type="submit">Join Now</button>
+  </form>
+</section>
+
+<!-- QUOTE SECTION -->
+<section id="quote" class="section" style="padding:40px 20px; background:#f8fafc;">
+  <div class="container" style="max-width:1100px; margin:0 auto; display:grid; gap:20px; grid-template-columns:1fr;">
+    <div class="card" style="background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 2px 10px rgba(2,6,23,.04);">
+      <h2>Tell us about your project</h2>
+      <form id="leadForm" action="https://formspree.io/f/mldnkzwr" method="POST">
+        <div style="display:grid; gap:12px; grid-template-columns:1fr;">
+          <label for="name">Name *</label>
+          <input id="name" name="name" required placeholder="Your full name">
+          <label for="phone">Phone *</label>
+          <input id="phone" name="phone" inputmode="tel" required placeholder="(123) 456-7890">
+        </div>
+        <div style="display:grid; gap:12px; grid-template-columns:1fr; margin-top:10px;">
+          <label for="zip">Zip Code *</label>
+          <input id="zip" name="zip" required placeholder="e.g. 40202">
+          <label for="city">City *</label>
+          <select id="city" name="city" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Louisville, KY</option>
+            <option>Henderson, KY</option>
+            <option>Evansville, IN</option>
+          </select>
+        </div>
+        <div style="display:grid; gap:12px; grid-template-columns:1fr; margin-top:10px;">
+          <label for="type">Project Type *</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>Interior or Exterior?</option>
+            <option>Interior</option>
+            <option>Exterior</option>
+            <option>Both</option>
+          </select>
+          <label for="timeline">Timeline</label>
+          <select id="timeline" name="timeline">
+            <option>As soon as possible</option>
+            <option>1–2 weeks</option>
+            <option>3–4 weeks</option>
+            <option>Flexible</option>
+          </select>
+        </div>
+        <label for="details" style="margin-top:10px; display:block; font-weight:600;">Project Details</label>
+        <textarea id="details" name="details" placeholder="Rooms, square footage, prep/repair, paint provided?, timeframe…" style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:10px; min-height:110px;"></textarea>
+        <div style="margin-top:14px; display:flex; gap:10px; align-items:center;">
+          <button class="btn" type="submit">Get free quotes</button>
+          <small style="font-size:12px; color:#64748b;">By submitting, you agree to be contacted by local pros.</small>
+        </div>
+        <p id="leadThanks" style="display:none; color:#16a34a; font-size:12px; margin-top:10px;">Thank you! A painter will contact you shortly.</p>
+      </form>
+    </div>
+    <div class="card" style="background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 2px 10px rgba(2,6,23,.04);">
+      <h2>Why homeowners choose us</h2>
+      <ul>
+        <li>Local, vetted painters—fast responses</li>
+        <li>Clear, competitive quotes</li>
+        <li>No spam—just pros ready to work</li>
+      </ul>
+      <div id="areas" style="margin-top:16px"><h3>Service Areas</h3>
+        <p>Louisville, KY • Henderson, KY • Evansville, IN</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINTERS SECTION -->
+<section id="painters" class="section" style="padding:40px 20px; background:#f8fafc;">
+  <div class="container" style="max-width:1100px; margin:0 auto; display:grid; gap:20px; grid-template-columns:1fr 1fr;">
+    <div class="card" style="background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 2px 10px rgba(2,6,23,.04);">
+      <h2>For Painters</h2>
+      <p>Join our network and get local homeowner leads. <strong>Pay only when you want a lead</strong> (launch plan).</p>
+      <form id="painterForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+        <label for="business">Business Name *</label>
+        <input id="business" name="business" required />
+        <label for="pemail">Email *</label>
+        <input id="pemail" name="email" type="email" required />
+        <label for="areasField">Service Areas</label>
+        <input id="areasField" name="areas" placeholder="Louisville; Henderson; Evansville" />
+        <label for="specialties">Specialties</label>
+        <input id="specialties" name="specialties" placeholder="Interior, Exterior, Cabinets, Commercial…" />
+        <button class="btn" type="submit" style="margin-top:12px;">Join the network</button>
+        <p id="painterThanks" style="display:none; color:#16a34a; font-size:12px; margin-top:10px;">Thanks! We’ll email your first opportunities soon.</p>
+      </form>
+    </div>
+    <div class="card" style="background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:18px; box-shadow:0 2px 10px rgba(2,6,23,.04);">
+      <h2>How pay-per-lead works</h2>
+      <ol>
+        <li>Homeowner submits a project in your area.</li>
+        <li>We email a lead preview (no contact info yet) with a payment link.</li>
+        <li><strong>First to purchase</strong> unlocks the full contact details.</li>
+      </ol>
+      <p style="font-size:12px; color:#64748b;">As volume grows, we’ll add fair routing (round-robin) and monthly caps. Stripe-secured payments.</p>
+    </div>
+  </div>
+</section>
+
+<footer style="padding:40px 20px; color:#475569; background:#f1f5f9;">
+  <div class="foot" style="max-width:1100px; margin:0 auto; display:flex; gap:12px; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+    <div style="font-size:12px;">© <span id="yr"></span> ProQoutes</div>
+    <div style="font-size:12px;"><a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></div>
+  </div>
+</footer>
+
 <script>
   const slides = document.querySelectorAll('.slide');
-  let i = 0; setInterval(()=>{ slides[i].classList.remove('active'); i=(i+1)%slides.length; slides[i].classList.add('active'); }, 4000);
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 4000);
 </script>
 
 </body>
