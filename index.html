@@ -1,28 +1,27 @@
-!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>ProQoutes • Fast Painting Quotes | Louisville • Henderson • Evansville</title>
-<meta name="description" content="Bright, fast, and friendly quotes for interior & exterior painting in Louisville KY, Henderson KY, and Evansville IN.">
+<meta name="description" content="Bright, fast painting quotes in Louisville & Henderson, KY and Evansville, IN — plus surrounding areas. Interior & exterior pros ready this week.">
 
 <!-- Preload your hero images -->
-<link rel="preload" as="image" href="images/ricky-singh-BdsRtr03Wko-unsplash.jpg">
 <link rel="preload" as="image" href="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg">
+<link rel="preload" as="image" href="images/ricky-singh-BdsRtr03Wko-unsplash.jpg">
 
 <style>
   :root{
     --ink:#0b132b;
-    --ink-2:#1c2541;
     --brand:#6d28d9;   /* vivid purple */
-    --brand-2:#22c55e; /* lively green */
     --accent:#2563eb;  /* blue */
+    --green:#22c55e;   /* lively green */
     --bg:#f7fbff;
     --card:#ffffff;
     --muted:#64748b;
   }
 
-  /* Global reset-ish */
+  /* Base + cursors */
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
@@ -33,25 +32,20 @@
       radial-gradient(1200px 600px at 15% -10%, rgba(109,40,217,.18), transparent 60%),
       radial-gradient(900px 600px at 100% 0%, rgba(34,197,94,.15), transparent 60%),
       var(--bg);
-    cursor: default; /* normal arrow everywhere */
+    cursor: default; /* arrow everywhere by default */
   }
-
-  /* Cursor rules you asked for */
   input, textarea, select { cursor: text; }
   button, .btn, a { cursor: pointer; }
 
-  /* Header / Tabs */
+  /* Header with tabs */
   header{
     position:sticky; top:0; z-index:50;
-    background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 60%, var(--brand-2) 100%);
-    color:#fff;
-    box-shadow:0 6px 24px rgba(0,0,0,.1);
+    background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 60%, var(--green) 100%);
+    color:#fff; box-shadow:0 6px 24px rgba(0,0,0,.1);
   }
   .wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
   .brand{font-weight:800; letter-spacing:.2px}
-  .tabs{
-    display:flex; gap:6px; flex-wrap:wrap;
-  }
+  .tabs{display:flex; gap:6px; flex-wrap:wrap;}
   .tab-btn{
     border:0; background:rgba(255,255,255,.18); color:#fff;
     padding:10px 14px; border-radius:12px; font-weight:700;
@@ -65,13 +59,9 @@
 
   main{max-width:1100px; margin:20px auto; padding:0 18px 40px;}
 
-  /* Cards / forms */
   .card{
-    background:var(--card);
-    border:1px solid #e2e8f0;
-    border-radius:18px;
-    padding:18px;
-    box-shadow:0 10px 30px rgba(2,6,23,.06);
+    background:var(--card); border:1px solid #e2e8f0; border-radius:18px;
+    padding:18px; box-shadow:0 10px 30px rgba(2,6,23,.06);
   }
   .grid{display:grid; gap:18px}
   .g-2{grid-template-columns:1fr}
@@ -84,8 +74,7 @@
   label{display:block; font-weight:700; margin:10px 0 6px}
   input, textarea, select{
     width:100%; font-size:16px; padding:12px 14px;
-    border:1.4px solid #cbd5e1; border-radius:12px;
-    background:#fff;
+    border:1.4px solid #cbd5e1; border-radius:12px; background:#fff;
   }
   textarea{min-height:110px; resize:vertical}
   .row{display:grid; gap:12px; grid-template-columns:1fr}
@@ -104,13 +93,17 @@
     box-shadow:0 6px 18px rgba(15,23,42,.08);
   }
 
-  /* HERO (Home tab) */
+  /* HERO with real <img> slides (easier paths) */
   .hero{
     position:relative; border-radius:22px; overflow:hidden;
     height:56vh; min-height:420px; margin-bottom:18px;
   }
   .slides{position:absolute; inset:0;}
-  .slide{position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity .9s ease}
+  .slide{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:center;
+    opacity:0; transition:opacity .9s ease;
+  }
   .slide.active{opacity:1}
   .scrim{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.6));}
   .heroContent{
@@ -127,7 +120,7 @@
   [role="tabpanel"].active{ display:block; }
 
   footer{ color:#475569; padding:30px 18px 50px; text-align:center }
-  small.muted{ color:var(--muted) }
+  .muted{ color:var(--muted) }
 </style>
 </head>
 <body>
@@ -135,8 +128,6 @@
 <header>
   <div class="wrap">
     <div class="brand">ProQoutes</div>
-
-    <!-- ARIA Tabs -->
     <div class="tabs" role="tablist" aria-label="Site sections">
       <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-home" id="tab-home-btn">Home</button>
       <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-quote" id="tab-quote-btn">Get Quote</button>
@@ -151,14 +142,14 @@
   <section id="tab-home" role="tabpanel" aria-labelledby="tab-home-btn" class="active">
     <div class="hero card" aria-label="Painting showcase">
       <div class="slides">
-        <div class="slide active" style="background-image:url('images/ricky-singh-BdsRtr03Wko-unsplash.jpg')"></div>
-        <div class="slide" style="background-image:url('images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg')"></div>
+        <img class="slide active" src="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg" alt="Fresh painted interior" />
+        <img class="slide" src="images/ricky-singh-BdsRtr03Wko-unsplash.jpg" alt="Painter at work" />
       </div>
       <div class="scrim" aria-hidden="true"></div>
       <div class="heroContent">
         <div>
           <h1>Fast, Friendly Painting Quotes</h1>
-          <p class="lead">Louisville &amp; Henderson, KY • Evansville, IN — interior &amp; exterior pros ready this week.</p>
+          <p class="lead">Louisville &amp; Henderson, KY • Evansville, IN — <strong>and surrounding areas</strong>. Interior &amp; exterior pros ready this week.</p>
           <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
             <a class="btn" data-goto="tab-quote">Get my free quote</a>
             <a class="btn ghost" data-goto="tab-painters">Are you a painter?</a>
@@ -180,7 +171,7 @@
       <div class="card">
         <h2>How it works</h2>
         <ol>
-          <li>Tell us about your project (takes 1–2 minutes).</li>
+          <li>Tell us about your project (1–2 minutes).</li>
           <li>We match you with available local pros.</li>
           <li>You get fast, fair quotes—no pressure.</li>
         </ol>
@@ -217,6 +208,7 @@
                 <option>Louisville, KY</option>
                 <option>Henderson, KY</option>
                 <option>Evansville, IN</option>
+                <option>Surrounding Area (KY/IN)</option>
               </select>
             </div>
           </div>
@@ -270,9 +262,9 @@
       <h2>Service Areas</h2>
       <p>We proudly serve:</p>
       <ul>
-        <li><strong>Louisville, Kentucky</strong></li>
-        <li><strong>Henderson, Kentucky</strong></li>
-        <li><strong>Evansville, Indiana</strong></li>
+        <li><strong>Louisville, Kentucky</strong> and surrounding areas</li>
+        <li><strong>Henderson, Kentucky</strong> and surrounding areas</li>
+        <li><strong>Evansville, Indiana</strong> and surrounding areas</li>
       </ul>
       <p class="muted">More cities coming soon.</p>
     </div>
@@ -290,7 +282,7 @@
           <label for="pemail">Email *</label>
           <input id="pemail" name="email" type="email" required />
           <label for="pareas">Service Areas</label>
-          <input id="pareas" name="areas" placeholder="Louisville; Henderson; Evansville" />
+          <input id="pareas" name="areas" placeholder="Louisville; Henderson; Evansville; Surrounding Areas" />
           <label for="pspec">Specialties</label>
           <input id="pspec" name="specialties" placeholder="Interior, Exterior, Cabinets, Commercial…" />
           <button class="btn" type="submit" style="margin-top:10px;">Join the network</button>
@@ -298,13 +290,13 @@
         </form>
       </div>
       <div class="card">
-        <h2>How pay‑per‑lead works</h2>
+        <h2>How pay-per-lead works</h2>
         <ol>
           <li>Homeowner submits a project in your area.</li>
           <li>We email a lead preview (no contact info yet) with a payment link.</li>
           <li><strong>First to purchase</strong> unlocks full contact details.</li>
         </ol>
-        <p class="muted">As volume grows, we’ll add round‑robin routing and monthly caps. Stripe‑secured payments.</p>
+        <p class="muted">As volume grows, we’ll add round-robin routing and monthly caps. Stripe-secured payments.</p>
       </div>
     </div>
   </section>
@@ -312,12 +304,10 @@
 
 <footer>
   <div>© <span id="yr"></span> ProQoutes • <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></div>
-  <!-- AdSense placeholder (uncomment after approval) -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR-ADSENSE-CLIENT" crossorigin="anonymous"></script> -->
 </footer>
 
 <script>
-  // Simple slideshow on Home tab
+  // Slideshow: using <img> elements so paths are straightforward
   const slides = document.querySelectorAll('.slide');
   let s = 0;
   setInterval(() => {
@@ -327,7 +317,7 @@
     slides[s].classList.add('active');
   }, 4000);
 
-  // Tabs behavior (ARIA friendly)
+  // Tabs behavior
   const tabButtons = document.querySelectorAll('[role="tab"]');
   const tabPanels = document.querySelectorAll('[role="tabpanel"]');
   function activateTab(id){
@@ -338,39 +328,28 @@
     tabPanels.forEach(p=>{
       p.classList.toggle('active', p.id === id);
     });
-    // Scroll to top of main on tab change for a crisp feel
     document.querySelector('main').scrollIntoView({behavior:'smooth', block:'start'});
   }
   tabButtons.forEach(btn=>{
     btn.addEventListener('click', ()=> activateTab(btn.getAttribute('aria-controls')));
   });
-  // CTA buttons on hero that jump to tabs
   document.querySelectorAll('[data-goto]').forEach(el=>{
-    el.addEventListener('click', ()=>{
-      const id = el.getAttribute('data-goto');
-      activateTab(id);
-    });
+    el.addEventListener('click', ()=> activateTab(el.getAttribute('data-goto')));
   });
 
-  // AJAX submit (Formspree) — show inline thank-you without leaving tab
+  // AJAX forms (Formspree)
   function wireAjaxForm(formId, thanksId){
     const form = document.getElementById(formId);
     const thanks = document.getElementById(thanksId);
     if(!form) return;
     form.addEventListener('submit', async (e)=>{
       e.preventDefault();
-      const formData = new FormData(form);
+      const fd = new FormData(form);
       try{
-        const res = await fetch(form.action, { method: form.method, body: formData, headers:{Accept:'application/json'} });
-        if(res.ok){
-          form.reset();
-          if(thanks) thanks.style.display='block';
-        }else{
-          alert('Oops! There was a problem submitting your form.');
-        }
-      }catch(_){
-        alert('Network error. Please try again.');
-      }
+        const res = await fetch(form.action, { method: form.method, body: fd, headers:{Accept:'application/json'} });
+        if(res.ok){ form.reset(); if(thanks) thanks.style.display='block'; }
+        else { alert('Oops! There was a problem submitting your form.'); }
+      }catch(_){ alert('Network error. Please try again.'); }
     });
   }
   wireAjaxForm('leadForm','leadThanks');
