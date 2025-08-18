@@ -4,22 +4,22 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>ProQoutes • Fast Painting Quotes | Louisville • Henderson • Evansville</title>
-<meta name="description" content="Bright, fast painting quotes in Louisville & Henderson, KY and Evansville, IN — plus surrounding areas. Interior & exterior pros ready this week.">
+<meta name="description" content="Professional painting quotes in Louisville & Henderson, KY and Evansville, IN. Licensed contractors ready this week. Interior, exterior, commercial painting services.">
+<meta name="keywords" content="painting contractors, Louisville painting, Henderson painting, Evansville painting, interior painting, exterior painting, house painters">
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFZ26600CD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-VFZ26600CD');
 </script>
-  <!-- Google AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3582318456891409"
-     crossorigin="anonymous"></script>
+
+<!-- Google AdSense Script -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3582318456891409" crossorigin="anonymous"></script>
   
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Preload hero images -->
 <link rel="preload" as="image" href="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg">
@@ -27,6 +27,7 @@
 <link rel="preload" as="image" href="images/pexels-pixabay-221027.jpg">
 <link rel="preload" as="image" href="images/pexels-shkrabaanthony-5493658.jpg">
 <link rel="preload" as="image" href="images/pexels-blue-bird-7218525.jpg">
+<link rel="preload" as="image" href="images/pexels-renetepe-3887428.jpg">
 
 <style>
   :root{
@@ -37,6 +38,7 @@
     --bg:#f7fbff;
     --card:#ffffff;
     --muted:#64748b;
+    --light-blue:#e0f2fe;
   }
 
   *{box-sizing:border-box}
@@ -47,10 +49,13 @@
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     color:var(--ink);
     background:
-      radial-gradient(1200px 600px at 15% -10%, rgba(109,40,217,.18), transparent 60%),
-      radial-gradient(900px 600px at 100% 0%, rgba(34,197,94,.15), transparent 60%),
+      linear-gradient(rgba(247,251,255,0.96), rgba(247,251,255,0.94)),
+      url('images/pexels-renetepe-3887428.jpg') center/cover no-repeat fixed,
+      radial-gradient(1200px 600px at 15% -10%, rgba(109,40,217,.12), transparent 60%),
+      radial-gradient(900px 600px at 100% 0%, rgba(34,197,94,.10), transparent 60%),
       var(--bg);
     cursor: default;
+    min-height: 100vh;
   }
   input, textarea, select { cursor: text; }
   button, .btn, a { cursor: pointer; }
@@ -59,102 +64,214 @@
   header{
     position:sticky; top:0; z-index:50;
     background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 60%, var(--green) 100%);
-    color:#fff; box-shadow:0 6px 24px rgba(0,0,0,.1);
+    color:#fff; box-shadow:0 8px 32px rgba(0,0,0,.15);
+    backdrop-filter: blur(8px);
   }
   .wrap{
-    max-width:1100px;margin:0 auto;
+    max-width:1200px;margin:0 auto;
     display:flex;align-items:center;justify-content:space-between;
-    padding:12px 18px
+    padding:14px 20px
   }
   .brand{
     font-family: Poppins, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     font-weight:800;
-    font-size: clamp(26px, 4.2vw, 40px);
-    letter-spacing:.2px; line-height:1;
-    background: linear-gradient(135deg, #ffffff, #e6f2ff);
+    font-size: clamp(28px, 4.5vw, 42px);
+    letter-spacing:.3px; line-height:1;
+    background: linear-gradient(135deg, #ffffff, #e6f2ff, #ffffff);
     -webkit-background-clip: text; background-clip: text;
     color: transparent;
-    text-shadow: 0 1px 0 rgba(0,0,0,.08);
+    text-shadow: 0 2px 4px rgba(0,0,0,.12);
     user-select:none;
   }
-  .tabs{display:flex; gap:6px; flex-wrap:wrap;}
+  .tabs{display:flex; gap:8px; flex-wrap:wrap;}
   .tab-btn{
-    border:0; background:rgba(255,255,255,.18); color:#fff;
-    padding:8px 12px; border-radius:12px; font-weight:700;
-    transition:transform .12s ease, background .2s ease;
+    border:0; background:rgba(255,255,255,.15); color:#fff;
+    padding:10px 16px; border-radius:14px; font-weight:600;
+    transition:all .15s ease; font-size:15px;
+    backdrop-filter: blur(4px);
   }
   .tab-btn[aria-selected="true"]{
-    background:#fff; color:var(--ink); box-shadow:0 6px 18px rgba(0,0,0,.12);
+    background:#fff; color:var(--ink); 
+    box-shadow:0 8px 24px rgba(0,0,0,.15);
+    transform: translateY(-2px);
+  }
+  .tab-btn:hover:not([aria-selected="true"]){
+    background:rgba(255,255,255,.25);
     transform: translateY(-1px);
   }
-  .tab-btn:focus-visible{outline:3px solid #fff; outline-offset:2px}
+  .tab-btn:focus-visible{outline:3px solid #fff; outline-offset:3px; border-radius:14px}
 
-  main{max-width:1100px; margin:20px auto; padding:0 18px 40px;}
+  main{max-width:1200px; margin:24px auto; padding:0 20px 60px;}
 
   .card{
-    background:var(--card); border:1px solid #e2e8f0; border-radius:18px;
-    padding:18px; box-shadow:0 10px 30px rgba(2,6,23,.06);
+    background:rgba(255,255,255,0.95); 
+    border:1px solid rgba(226,232,240,0.8); 
+    border-radius:20px;
+    padding:24px; 
+    box-shadow:0 12px 40px rgba(2,6,23,.08);
+    backdrop-filter: blur(8px);
   }
-  .grid{display:grid; gap:18px}
+  .grid{display:grid; gap:24px}
   .g-2{grid-template-columns:1fr}
-  @media(min-width:900px){ .g-2{grid-template-columns:1.2fr .8fr} }
+  .g-3{grid-template-columns:1fr}
+  @media(min-width:768px){ .g-2{grid-template-columns:1.2fr .8fr} }
+  @media(min-width:900px){ .g-3{grid-template-columns:1fr 1fr 1fr} }
 
-  h1{margin:0 0 10px; font-size:clamp(26px, 5vw, 44px)}
-  h2{margin:0 0 10px; font-size:clamp(20px, 3vw, 28px)}
-  p.lead{margin:0 0 16px; color:#111827}
+  h1{margin:0 0 12px; font-size:clamp(30px, 5.5vw, 48px); font-weight:700; line-height:1.1}
+  h2{margin:0 0 12px; font-size:clamp(22px, 3.5vw, 32px); font-weight:600; line-height:1.2}
+  h3{margin:0 0 10px; font-size:clamp(18px, 2.5vw, 24px); font-weight:600}
+  p.lead{margin:0 0 18px; color:#111827; font-size:clamp(16px, 2vw, 18px); line-height:1.6}
+  p{line-height:1.6; margin-bottom:12px}
 
-  label{display:block; font-weight:700; margin:10px 0 6px}
+  label{display:block; font-weight:600; margin:12px 0 6px; color:var(--ink)}
   input, textarea, select{
-    width:100%; font-size:16px; padding:12px 14px;
-    border:1.4px solid #cbd5e1; border-radius:12px; background:#fff;
+    width:100%; font-size:16px; padding:14px 16px;
+    border:2px solid #e2e8f0; border-radius:12px; 
+    background:rgba(255,255,255,0.9);
+    transition: border-color .2s ease, box-shadow .2s ease;
   }
-  textarea{min-height:110px; resize:vertical}
-  .row{display:grid; gap:12px; grid-template-columns:1fr}
+  input:focus, textarea:focus, select:focus{
+    outline:none; border-color:var(--accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  }
+  textarea{min-height:120px; resize:vertical; font-family: inherit}
+  .row{display:grid; gap:16px; grid-template-columns:1fr}
   @media(min-width:700px){ .row-2{grid-template-columns:1fr 1fr} }
 
   .btn{
-    display:inline-block; border:0; border-radius:12px; padding:12px 18px;
+    display:inline-block; border:0; border-radius:14px; padding:14px 24px;
     background:linear-gradient(135deg, var(--brand), var(--accent));
-    color:#fff; font-weight:800; text-decoration:none;
-    box-shadow:0 10px 24px rgba(37,99,235,.35);
-    transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+    color:#fff; font-weight:700; text-decoration:none;
+    box-shadow:0 12px 28px rgba(37,99,235,.4);
+    transition: all .15s ease; font-size:16px;
   }
-  .btn:hover{ transform: translateY(-1px); filter:brightness(1.03); box-shadow:0 14px 28px rgba(37,99,235,.45); }
+  .btn:hover{ 
+    transform: translateY(-2px); 
+    filter:brightness(1.05); 
+    box-shadow:0 16px 36px rgba(37,99,235,.5); 
+  }
   .btn.ghost{
-    background:#fff; color:var(--ink); border:1px solid #e5e7eb;
-    box-shadow:0 6px 18px rgba(15,23,42,.08);
+    background:rgba(255,255,255,0.95); color:var(--ink); 
+    border:2px solid rgba(226,232,240,0.8);
+    box-shadow:0 8px 24px rgba(15,23,42,.12);
+  }
+  .btn.ghost:hover{
+    background:#fff; border-color:var(--accent);
+    transform: translateY(-2px);
   }
 
   /* HERO with <img> slides */
   .hero{
-    position:relative; border-radius:22px; overflow:hidden;
-    height:56vh; min-height:420px; margin-bottom:18px;
+    position:relative; border-radius:24px; overflow:hidden;
+    height:60vh; min-height:480px; margin-bottom:24px;
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
   }
   .slides{position:absolute; inset:0;}
   .slide{
     position:absolute; inset:0; width:100%; height:100%;
     object-fit:cover; object-position:center;
-    opacity:0; transition:opacity 1.1s ease;
+    opacity:0; transition:opacity 1.2s ease;
   }
   .slide.active{opacity:1}
-  .scrim{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.6));}
+  .scrim{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.65));}
   .heroContent{
     position:relative; z-index:2; color:#fff; height:100%;
-    display:flex; align-items:center; justify-content:center; text-align:center; padding:0 16px;
+    display:flex; align-items:center; justify-content:center; 
+    text-align:center; padding:0 20px;
   }
-  /* Make the slideshow tagline white */
-  .heroContent p.lead{ color:#ffffff; }
+  .heroContent p.lead{ color:#ffffff; font-size:clamp(16px, 2.2vw, 20px) }
   .badges{
-    position:absolute; bottom:10px; right:12px; z-index:2; color:#fff; font-size:12px; opacity:.95;
-    background:rgba(0,0,0,.25); padding:6px 10px; border-radius:10px;
+    position:absolute; bottom:16px; right:16px; z-index:2; 
+    color:#fff; font-size:13px; opacity:.95;
+    background:rgba(0,0,0,.3); padding:8px 14px; border-radius:12px;
+    backdrop-filter: blur(4px);
   }
 
   /* Tabs content */
   [role="tabpanel"]{ display:none; }
   [role="tabpanel"].active{ display:block; }
 
-  footer{ color:#475569; padding:30px 18px 50px; text-align:center }
+  /* Content sections */
+  .feature-list{
+    list-style:none; padding:0; margin:0;
+  }
+  .feature-list li{
+    padding:8px 0; border-bottom:1px solid #f1f5f9;
+    display:flex; align-items:flex-start; gap:10px;
+  }
+  .feature-list li:last-child{border-bottom:none}
+  .feature-list li:before{
+    content:'✓'; color:var(--green); font-weight:700;
+    flex-shrink:0; margin-top:2px;
+  }
+
+  .steps{
+    counter-reset: step-counter;
+    list-style:none; padding:0; margin:0;
+  }
+  .steps li{
+    counter-increment: step-counter;
+    padding:12px 0; margin-bottom:8px;
+    position:relative; padding-left:40px;
+  }
+  .steps li:before{
+    content: counter(step-counter);
+    position:absolute; left:0; top:12px;
+    background:var(--brand); color:#fff; 
+    width:28px; height:28px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:14px;
+  }
+
+  /* Blog section */
+  .blog-grid{
+    display:grid; gap:20px; grid-template-columns:1fr;
+  }
+  @media(min-width:768px){ .blog-grid{grid-template-columns:1fr 1fr} }
+  @media(min-width:1024px){ .blog-grid{grid-template-columns:1fr 1fr 1fr} }
+
+  .blog-card{
+    background:rgba(255,255,255,0.9); border-radius:16px; overflow:hidden;
+    box-shadow:0 8px 28px rgba(0,0,0,.08); transition: transform .2s ease;
+  }
+  .blog-card:hover{ transform: translateY(-4px) }
+  .blog-card h4{ margin:0 0 8px; font-size:18px; font-weight:600 }
+  .blog-card p{ font-size:14px; color:var(--muted); margin:0; line-height:1.5 }
+  .blog-content{ padding:18px }
+
+  /* Legal pages styles */
+  .legal-content{
+    max-width:800px; margin:0 auto; line-height:1.7;
+  }
+  .legal-content h2{
+    margin:32px 0 16px; padding-bottom:8px;
+    border-bottom:2px solid var(--accent);
+  }
+  .legal-content h3{
+    margin:24px 0 12px; color:var(--brand);
+  }
+
+  footer{ 
+    color:#64748b; padding:40px 20px 60px; text-align:center;
+    background:rgba(255,255,255,0.7); backdrop-filter: blur(8px);
+    border-top:1px solid rgba(226,232,240,0.8);
+  }
   .muted{ color:var(--muted) }
+
+  /* AdSense placeholder */
+  .ad-placeholder{
+    background:var(--light-blue); border:2px dashed var(--accent);
+    padding:20px; text-align:center; margin:20px 0;
+    border-radius:12px; color:var(--muted);
+  }
+
+  /* Responsive improvements */
+  @media(max-width:768px){
+    .hero{ height:50vh; min-height:400px }
+    .card{ padding:18px }
+    main{ padding:0 16px 40px }
+    .wrap{ padding:12px 16px }
+  }
 </style>
 </head>
 <body>
@@ -165,8 +282,10 @@
     <div class="tabs" role="tablist" aria-label="Site sections">
       <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-home" id="tab-home-btn">Home</button>
       <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-quote" id="tab-quote-btn">Get Quote</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-blog" id="tab-blog-btn">Blog</button>
       <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-areas" id="tab-areas-btn">Service Areas</button>
       <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-painters" id="tab-painters-btn">For Painters</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-privacy" id="tab-privacy-btn">Privacy</button>
     </div>
   </div>
 </header>
@@ -176,43 +295,66 @@
   <section id="tab-home" role="tabpanel" aria-labelledby="tab-home-btn" class="active">
     <div class="hero card" aria-label="Painting showcase">
       <div class="slides">
-        <img class="slide active" src="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg" alt="Fresh painted interior">
-        <img class="slide" src="images/ricky-singh-BdsRtr03Wko-unsplash.jpg" alt="Painter at work">
-        <img class="slide" src="images/pexels-pixabay-221027.jpg" alt="House exterior freshly painted">
-        <img class="slide" src="images/pexels-shkrabaanthony-5493658.jpg" alt="Painter prepping wall">
-        <img class="slide" src="images/pexels-blue-bird-7218525.jpg" alt="Team painting living room">
+        <img class="slide active" src="images/karl-hedin-nlZhGQOy-Vw-unsplash.jpg" alt="Beautiful interior room with fresh paint and modern decor">
+        <img class="slide" src="images/ricky-singh-BdsRtr03Wko-unsplash.jpg" alt="Professional painter applying fresh coat to interior wall">
+        <img class="slide" src="images/pexels-pixabay-221027.jpg" alt="Elegant house exterior with professional paint job">
+        <img class="slide" src="images/pexels-shkrabaanthony-5493658.jpg" alt="Skilled painter prepping wall surface for quality finish">
+        <img class="slide" src="images/pexels-blue-bird-7218525.jpg" alt="Professional painting team transforming living room">
       </div>
       <div class="scrim" aria-hidden="true"></div>
       <div class="heroContent">
         <div>
-          <h1>Fast, Friendly Painting Quotes</h1>
-          <p class="lead">Louisville &amp; Henderson, KY • Evansville, IN — <strong>and surrounding areas</strong>. Interior &amp; exterior pros ready this week.</p>
-          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+          <h1>Fast, Professional Painting Quotes</h1>
+          <p class="lead">Louisville &amp; Henderson, KY • Evansville, IN — and surrounding areas. Licensed, insured contractors ready to transform your space this week.</p>
+          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:24px">
             <a class="btn" data-goto="tab-quote">Get my free quote</a>
             <a class="btn ghost" data-goto="tab-painters">Are you a painter?</a>
           </div>
         </div>
       </div>
-      <div class="badges">Licensed &amp; Insured • Local Pros • No obligation</div>
+      <div class="badges">Licensed &amp; Insured • Local Professionals • No Obligation</div>
     </div>
 
-    <div class="grid g-2">
+    <div class="grid g-3">
       <div class="card">
-        <h2>Why homeowners choose us</h2>
-        <ul>
-          <li>Local, vetted painters with fast responses</li>
-          <li>Clear, competitive quotes</li>
-          <li>No spam—just pros ready to work</li>
+        <h2>Why Choose ProQoutes</h2>
+        <ul class="feature-list">
+          <li>Vetted, licensed painting contractors in your area</li>
+          <li>Fast response times - quotes within 24 hours</li>
+          <li>Competitive pricing from multiple professionals</li>
+          <li>No spam or pressure tactics</li>
+          <li>Quality guarantee on all work</li>
+          <li>Free estimates and consultations</li>
         </ul>
       </div>
+      
       <div class="card">
-        <h2>How it works</h2>
-        <ol>
-          <li>Tell us about your project (1–2 minutes).</li>
-          <li>We match you with available local pros.</li>
-          <li>You get fast, fair quotes—no pressure.</li>
+        <h2>Our Simple Process</h2>
+        <ol class="steps">
+          <li>Submit your project details in our quick form (2-3 minutes)</li>
+          <li>We match you with qualified local painting contractors</li>
+          <li>Receive multiple competitive quotes within 24-48 hours</li>
+          <li>Compare quotes and choose the best contractor for your needs</li>
+          <li>Schedule your project and enjoy professional results</li>
         </ol>
       </div>
+
+      <div class="card">
+        <h2>Services We Connect</h2>
+        <ul class="feature-list">
+          <li>Interior room painting and color consultation</li>
+          <li>Exterior house painting and power washing</li>
+          <li>Commercial and office painting projects</li>
+          <li>Cabinet refinishing and kitchen updates</li>
+          <li>Deck and fence staining services</li>
+          <li>Drywall repair and texture matching</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Ad placeholder for AdSense -->
+    <div class="ad-placeholder">
+      <small>Advertisement Space - Google AdSense</small>
     </div>
   </section>
 
@@ -220,90 +362,215 @@
   <section id="tab-quote" role="tabpanel" aria-labelledby="tab-quote-btn">
     <div class="grid g-2">
       <div class="card">
-        <h2>Request your free quote</h2>
+        <h2>Request Your Free Painting Quote</h2>
+        <p class="lead">Get connected with licensed, insured painting contractors in your area. No obligation, no spam - just quality professionals ready to help.</p>
+        
         <form id="leadForm" action="https://formspree.io/f/mldnkzwr" method="POST">
           <div class="row row-2">
             <div>
-              <label for="name">Name *</label>
-              <input id="name" name="name" required placeholder="Your full name">
+              <label for="name">Full Name *</label>
+              <input id="name" name="name" required placeholder="Enter your full name" autocomplete="name">
             </div>
             <div>
-              <label for="phone">Phone *</label>
-              <input id="phone" name="phone" inputmode="tel" required placeholder="(123) 456-7890">
+              <label for="phone">Phone Number *</label>
+              <input id="phone" name="phone" inputmode="tel" required placeholder="(123) 456-7890" autocomplete="tel">
             </div>
           </div>
 
           <div class="row row-2">
             <div>
-              <label for="zip">Zip Code *</label>
-              <input id="zip" name="zip" required placeholder="e.g. 40202" pattern="\d{5}">
+              <label for="email">Email Address *</label>
+              <input id="email" name="email" type="email" required placeholder="your@email.com" autocomplete="email">
             </div>
             <div>
-              <label for="city">City *</label>
+              <label for="zip">Zip Code *</label>
+              <input id="zip" name="zip" required placeholder="e.g. 40202" pattern="\d{5}" autocomplete="postal-code">
+            </div>
+          </div>
+
+          <div class="row row-2">
+            <div>
+              <label for="city">Service Area *</label>
               <select id="city" name="city" required>
-                <option value="" disabled selected>Select one</option>
+                <option value="" disabled selected>Select your area</option>
                 <option>Louisville, KY</option>
                 <option>Henderson, KY</option>
                 <option>Evansville, IN</option>
+                <option>Jeffersonville, IN</option>
+                <option>New Albany, IN</option>
                 <option>Surrounding Area (KY/IN)</option>
+              </select>
+            </div>
+            <div>
+              <label for="type">Project Type *</label>
+              <select id="type" name="type" required>
+                <option value="" disabled selected>What needs painting?</option>
+                <option>Interior Rooms</option>
+                <option>Exterior House</option>
+                <option>Both Interior & Exterior</option>
+                <option>Commercial Building</option>
+                <option>Cabinets/Furniture</option>
+                <option>Other</option>
               </select>
             </div>
           </div>
 
           <div class="row row-2">
             <div>
-              <label for="type">Project Type *</label>
-              <select id="type" name="type" required>
-                <option value="" disabled selected>Interior or Exterior?</option>
-                <option>Interior</option>
-                <option>Exterior</option>
-                <option>Both</option>
+              <label for="timeline">Preferred Timeline</label>
+              <select id="timeline" name="timeline">
+                <option>As soon as possible</option>
+                <option>Within 2 weeks</option>
+                <option>Within 1 month</option>
+                <option>Within 3 months</option>
+                <option>Flexible timeline</option>
               </select>
             </div>
             <div>
-              <label for="timeline">Timeline</label>
-              <select id="timeline" name="timeline">
-                <option>As soon as possible</option>
-                <option>1–2 weeks</option>
-                <option>3–4 weeks</option>
-                <option>Flexible</option>
+              <label for="budget">Approximate Budget</label>
+              <select id="budget" name="budget">
+                <option>Under $1,000</option>
+                <option>$1,000 - $3,000</option>
+                <option>$3,000 - $7,000</option>
+                <option>$7,000 - $15,000</option>
+                <option>Over $15,000</option>
+                <option>Not sure</option>
               </select>
             </div>
           </div>
 
           <label for="details">Project Details</label>
-          <textarea id="details" name="details" placeholder="Rooms, square footage, prep/repair, paint provided?, timeframe…"></textarea>
+          <textarea id="details" name="details" placeholder="Please describe your painting project: Which rooms? Square footage? Prep work needed? Color preferences? Any special requirements?"></textarea>
 
-          <div style="margin-top:14px; display:flex; gap:10px; align-items:center;">
-            <button class="btn" type="submit">Get free quotes</button>
-            <small class="muted">By submitting, you agree to be contacted by local pros.</small>
+          <div style="margin-top:18px; display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap">
+            <button class="btn" type="submit">Get Free Quotes Now</button>
+            <small class="muted" style="max-width:300px">By submitting, you agree to be contacted by up to 3 local painting professionals. View our <a href="#" data-goto="tab-privacy" style="color:var(--brand)">privacy policy</a>.</small>
           </div>
-          <p id="leadThanks" style="display:none; color:#16a34a; font-weight:700; margin-top:10px;">Thanks! A painter will contact you shortly.</p>
+          <p id="leadThanks" style="display:none; color:#16a34a; font-weight:700; margin-top:12px;">✓ Thank you! Local painting contractors will contact you within 24 hours with free quotes.</p>
         </form>
       </div>
 
       <div class="card">
-        <h2>Tips for faster quotes</h2>
-        <ul>
-          <li>List rooms or exterior sides to paint</li>
-          <li>Approximate square footage</li>
-          <li>Your ideal start date</li>
+        <h2>Get Better Quotes Faster</h2>
+        <h3>Include These Details:</h3>
+        <ul class="feature-list">
+          <li>Specific rooms or areas to be painted</li>
+          <li>Approximate square footage or room dimensions</li>
+          <li>Current wall conditions and prep work needed</li>
+          <li>Preferred paint brands or quality level</li>
+          <li>Color preferences or design ideas</li>
+          <li>Your ideal project start date</li>
+        </ul>
+
+        <h3>What to Expect:</h3>
+        <ul class="feature-list">
+          <li>Contractors will contact you within 24 hours</li>
+          <li>Free in-home consultations and measurements</li>
+          <li>Detailed written estimates with material costs</li>
+          <li>References and portfolio examples</li>
+          <li>Flexible scheduling options</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="tab-blog" role="tabpanel" aria-labelledby="tab-blog-btn">
+    <div class="card">
+      <h2>Painting Tips & Advice</h2>
+      <p class="lead">Expert advice from professional painters to help you make informed decisions about your painting projects.</p>
+    </div>
+
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-content">
+          <h4>Choosing the Right Paint Colors for Your Home</h4>
+          <p>Color selection can make or break your painting project. Learn how lighting, room size, and existing decor influence your choices. Professional painters recommend testing colors in different lighting conditions before making final decisions.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-content">
+          <h4>Interior vs. Exterior Paint: What's the Difference?</h4>
+          <p>Not all paints are created equal. Interior paints are formulated for easier cleaning and lower odor, while exterior paints resist UV rays, moisture, and temperature changes. Using the wrong type can lead to premature failure.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-content">
+          <h4>When to Hire a Professional vs. DIY Painting</h4>
+          <p>Some projects are perfect for DIY enthusiasts, while others require professional expertise. High ceilings, exterior work, and detailed prep work often justify the cost of hiring experienced painters.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-content">
+          <h4>Preparing Your Home for Professional Painters</h4>
+          <p>Proper preparation ensures the best results and helps your project run smoothly. Move furniture, remove wall hangings, and communicate special requirements with your contractor before work begins.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-content">
+          <h4>Understanding Paint Quality and Finish Options</h4>
+          <p>From flat to high-gloss, each paint finish serves different purposes. Higher quality paints may cost more upfront but provide better coverage, durability, and long-term value for your investment.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-content">
+          <h4>Seasonal Considerations for Painting Projects</h4>
+          <p>Weather affects both interior and exterior painting projects. Learn the best times of year for different types of work and how temperature and humidity impact paint application and drying times.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad placeholder -->
+    <div class="ad-placeholder" style="margin:40px 0">
+      <small>Advertisement Space - Google AdSense</small>
     </div>
   </section>
 
   <!-- AREAS -->
   <section id="tab-areas" role="tabpanel" aria-labelledby="tab-areas-btn">
     <div class="card">
-      <h2>Service Areas</h2>
-      <p>We proudly serve:</p>
-      <ul>
-        <li><strong>Louisville, Kentucky</strong> and surrounding areas</li>
-        <li><strong>Henderson, Kentucky</strong> and surrounding areas</li>
-        <li><strong>Evansville, Indiana</strong> and surrounding areas</li>
+      <h2>Our Service Areas</h2>
+      <p class="lead">ProQoutes connects homeowners with qualified painting contractors throughout the tri-state region. Our network covers major cities and surrounding communities in Kentucky and Indiana.</p>
+      
+      <div class="grid g-2">
+        <div>
+          <h3>Kentucky Service Areas</h3>
+          <ul class="feature-list">
+            <li><strong>Louisville Metro</strong> - All Jefferson County neighborhoods including Highlands, Germantown, St. Matthews, and Middletown</li>
+            <li><strong>Henderson</strong> - Henderson County and surrounding communities</li>
+            <li><strong>Owensboro</strong> - Daviess County and neighboring areas</li>
+            <li><strong>Bowling Green</strong> - Warren County region</li>
+            <li><strong>Lexington</strong> - Fayette County and central Kentucky</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3>Indiana Service Areas</h3>
+          <ul class="feature-list">
+            <li><strong>Evansville</strong> - Vanderburgh County and surrounding areas</li>
+            <li><strong>New Albany</strong> - Floyd County communities</li>
+            <li><strong>Jeffersonville</strong> - Clark County region</li>
+            <li><strong>Madison</strong> - Jefferson County, Indiana</li>
+            <li><strong>Vincennes</strong> - Knox County area</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Why Choose Local Contractors?</h3>
+      <ul class="feature-list">
+        <li>Familiar with local building codes and regulations</li>
+        <li>Understanding of regional climate and weather patterns</li>
+        <li>Established reputation within the community</li>
+        <li>Quick response times and local references</li>
+        <li>Supporting local economy and businesses</li>
       </ul>
-      <p class="muted">More cities coming soon.</p>
+
+      <p class="muted"><strong>Don't see your area listed?</strong> We're expanding our network regularly. Submit a quote request and we'll check for available contractors in your location.</p>
     </div>
   </section>
 
@@ -311,40 +578,194 @@
   <section id="tab-painters" role="tabpanel" aria-labelledby="tab-painters-btn">
     <div class="grid g-2">
       <div class="card">
-        <h2>For Painters</h2>
-        <p>Join our network and get local homeowner leads. <strong>Pay only when you want a lead</strong> (launch plan).</p>
+        <h2>Join Our Painting Contractor Network</h2>
+        <p class="lead">Connect with homeowners actively seeking painting services in your area. <strong>Pay only for leads you want</strong> - no monthly fees or contracts.</p>
+        
         <form id="painterForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
-          <label for="business">Business Name *</label>
-          <input id="business" name="business" required />
-          <label for="pemail">Email *</label>
-          <input id="pemail" name="email" type="email" required />
-          <label for="pareas">Service Areas</label>
-          <input id="pareas" name="areas" placeholder="Louisville; Henderson; Evansville; Surrounding Areas" />
+          <div class="row
+             <div class="row row-2">
+            <div>
+              <label for="business">Business Name *</label>
+              <input id="business" name="business" required placeholder="Your painting business name">
+            </div>
+            <div>
+              <label for="pemail">Email Address *</label>
+              <input id="pemail" name="email" type="email" required placeholder="business@email.com">
+            </div>
+          </div>
+
+          <div class="row row-2">
+            <div>
+              <label for="plicense">License Number</label>
+              <input id="plicense" name="license" placeholder="State license number">
+            </div>
+            <div>
+              <label for="pinsurance">Insurance Provider</label>
+              <input id="pinsurance" name="insurance" placeholder="Your insurance company">
+            </div>
+          </div>
+
+          <label for="pareas">Service Areas *</label>
+          <input id="pareas" name="areas" required placeholder="Louisville; Henderson; Evansville; Surrounding Areas">
+          
           <label for="pspec">Specialties</label>
-          <input id="pspec" name="specialties" placeholder="Interior, Exterior, Cabinets, Commercial…" />
-          <button class="btn" type="submit" style="margin-top:10px;">Join the network</button>
-          <p id="painterThanks" style="display:none; color:#16a34a; font-weight:700; margin-top:10px;">Thanks! We’ll email your first opportunities soon.</p>
+          <textarea id="pspec" name="specialties" placeholder="Interior painting, Exterior painting, Cabinets, Commercial projects, Faux finishes, Wallpaper removal..."></textarea>
+          
+          <label for="pexperience">Years of Experience</label>
+          <select id="pexperience" name="experience">
+            <option>Less than 2 years</option>
+            <option>2-5 years</option>
+            <option>5-10 years</option>
+            <option>10-20 years</option>
+            <option>Over 20 years</option>
+          </select>
+
+          <button class="btn" type="submit" style="margin-top:16px;">Join Our Network</button>
+          <p id="painterThanks" style="display:none; color:#16a34a; font-weight:700; margin-top:12px;">✓ Thanks! We'll email you about lead opportunities in your area soon.</p>
         </form>
       </div>
+
       <div class="card">
-        <h2>How pay-per-lead works</h2>
-        <ol>
-          <li>Homeowner submits a project in your area.</li>
-          <li>We email a lead preview (no contact info yet) with a payment link.</li>
-          <li><strong>First to purchase</strong> unlocks full contact details.</li>
+        <h2>How Our Lead System Works</h2>
+        <ol class="steps">
+          <li>Homeowner submits a project request in your service area</li>
+          <li>We email you a lead preview with project details (no contact info yet)</li>
+          <li>Click to purchase the lead and unlock full contact information</li>
+          <li>Contact the homeowner directly to provide your quote</li>
+          <li>Close the deal and get paid for your work</li>
         </ol>
-        <p class="muted">As volume grows, we’ll add round-robin routing and monthly caps. Stripe-secured payments.</p>
+
+        <h3>Pricing & Benefits</h3>
+        <ul class="feature-list">
+          <li>Pay per lead - typically $15-$45 depending on project size</li>
+          <li>No monthly fees or subscription costs</li>
+          <li>Choose which leads you want to purchase</li>
+          <li>Secure payments processed through Stripe</li>
+          <li>Lead exclusivity - you're the only contractor contacted</li>
+          <li>Money-back guarantee if lead info is invalid</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section id="tab-privacy" role="tabpanel" aria-labelledby="tab-privacy-btn">
+    <div class="card">
+      <div class="legal-content">
+        <h2>Privacy Policy</h2>
+        <p><strong>Last Updated:</strong> August 17, 2025</p>
+
+        <h3>Information We Collect</h3>
+        <p>When you use ProQoutes to request painting quotes, we collect the following information:</p>
+        <ul>
+          <li><strong>Contact Information:</strong> Name, phone number, email address, and zip code</li>
+          <li><strong>Project Details:</strong> Type of painting work, timeline, budget, and specific requirements</li>
+          <li><strong>Usage Data:</strong> How you interact with our website, pages visited, and time spent</li>
+          <li><strong>Technical Data:</strong> IP address, browser type, device information, and cookies</li>
+        </ul>
+
+        <h3>How We Use Your Information</h3>
+        <p>We use the information you provide to:</p>
+        <ul>
+          <li>Connect you with qualified local painting contractors</li>
+          <li>Send you quotes and project-related communications</li>
+          <li>Improve our services and website functionality</li>
+          <li>Analyze usage patterns and optimize user experience</li>
+          <li>Send occasional updates about our services (with opt-out option)</li>
+        </ul>
+
+        <h3>Information Sharing</h3>
+        <p>We share your project information only with:</p>
+        <ul>
+          <li><strong>Painting Contractors:</strong> Licensed professionals in your area who can provide quotes</li>
+          <li><strong>Service Providers:</strong> Third-party tools that help us operate our website (analytics, email services)</li>
+          <li><strong>Legal Requirements:</strong> When required by law or to protect our legal rights</li>
+        </ul>
+        <p><strong>We never sell your personal information to third parties.</strong></p>
+
+        <h3>Data Security</h3>
+        <p>We implement appropriate security measures to protect your personal information, including:</p>
+        <ul>
+          <li>SSL encryption for all data transmission</li>
+          <li>Secure servers and regular security updates</li>
+          <li>Limited access to personal information</li>
+          <li>Regular monitoring for security threats</li>
+        </ul>
+
+        <h3>Your Rights</h3>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access the personal information we have about you</li>
+          <li>Request correction of inaccurate information</li>
+          <li>Request deletion of your personal information</li>
+          <li>Opt out of marketing communications</li>
+          <li>Object to processing of your information</li>
+        </ul>
+
+        <h3>Cookies</h3>
+        <p>We use cookies to enhance your experience on our website. These include:</p>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Required for basic website functionality</li>
+          <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our site</li>
+          <li><strong>Marketing Cookies:</strong> Enable personalized advertising (with your consent)</li>
+        </ul>
+
+        <h3>Third-Party Services</h3>
+        <p>Our website uses third-party services including:</p>
+        <ul>
+          <li><strong>Google Analytics:</strong> Website usage analysis</li>
+          <li><strong>Google AdSense:</strong> Display advertising</li>
+          <li><strong>Formspree:</strong> Form submission processing</li>
+        </ul>
+
+        <h3>Contact Us</h3>
+        <p>If you have questions about this privacy policy or want to exercise your rights, contact us at:</p>
+        <p><strong>Email:</strong> privacy@proqoutes.com<br>
+        <strong>Mail:</strong> ProQoutes Privacy Team, 123 Main Street, Louisville, KY 40202</p>
+
+        <h3>Changes to This Policy</h3>
+        <p>We may update this privacy policy from time to time. We will notify you of any material changes by posting the new policy on this page with an updated "Last Updated" date.</p>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div>© <span id="yr"></span> ProQoutes • <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></div>
+  <div style="max-width:1200px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:24px; text-align:left;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:24px;">
+        <div>
+          <h4 style="margin:0 0 12px; color:var(--ink);">ProQoutes</h4>
+          <p style="font-size:14px; line-height:1.5; margin:0;">Connecting homeowners with trusted local painting contractors in Kentucky and Indiana. Fast quotes, quality work, fair prices.</p>
+        </div>
+        <div>
+          <h4 style="margin:0 0 12px; color:var(--ink);">Services</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px;">
+            <li style="margin-bottom:6px;"><a href="#" data-goto="tab-quote" style="color:var(--muted); text-decoration:none;">Interior Painting</a></li>
+            <li style="margin-bottom:6px;"><a href="#" data-goto="tab-quote" style="color:var(--muted); text-decoration:none;">Exterior Painting</a></li>
+            <li style="margin-bottom:6px;"><a href="#" data-goto="tab-quote" style="color:var(--muted); text-decoration:none;">Commercial Projects</a></li>
+            <li style="margin-bottom:6px;"><a href="#" data-goto="tab-quote" style="color:var(--muted); text-decoration:none;">Cabinet Refinishing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin:0 0 12px; color:var(--ink);">Areas</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px;">
+            <li style="margin-bottom:6px;"><a href="#" data-goto="tab-areas" style="color:var(--muted); text-decoration:none;">Louisville, KY</a></li>
+            <li style="margin-bottom:6px;"><a href="#" data-goto="tab-areas" style="color:var(--muted); text-decoration:none;">Henderson, KY</a></li>
+            <li style="margin-bottom:6px;"><a href="#" data-goto="tab-areas" style="color:var(--muted); text-decoration:none;">Evansville, IN</a></li>
+            <li style="margin-bottom:6px;"><a href="#" data-goto="tab-areas" style="color:var(--muted); text-decoration:none;">Surrounding Areas</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(226,232,240,0.8); padding-top:24px; text-align:center;">
+      <p style="margin:0; font-size:14px;">© <span id="yr"></span> ProQoutes • <a href="#" data-goto="tab-privacy" style="color:var(--brand); text-decoration:none;">Privacy Policy</a> • <a href="/terms.html" style="color:var(--brand); text-decoration:none;">Terms of Service</a></p>
+    </div>
+  </div>
 </footer>
 
 <script>
-  // Slideshow: 7s per slide + pause on hover
+  // Slideshow: 8s per slide + pause on hover
   const slides = document.querySelectorAll('.slide');
   const hero = document.querySelector('.hero');
   let s = 0, timer = null, paused = false;
@@ -355,7 +776,7 @@
     s = (s + 1) % slides.length;
     slides[s].classList.add('active');
   }
-  function start(){ if(timer) clearInterval(timer); timer = setInterval(showNext, 7000); }
+  function start(){ if(timer) clearInterval(timer); timer = setInterval(showNext, 8000); }
   function stop(){ if(timer) clearInterval(timer); timer = null; }
 
   hero?.addEventListener('mouseenter', ()=>{ paused = true; stop(); });
@@ -374,13 +795,19 @@
     tabPanels.forEach(p=>{
       p.classList.toggle('active', p.id === id);
     });
+    // Smooth scroll to main content
     document.querySelector('main').scrollIntoView({behavior:'smooth', block:'start'});
   }
+  
   tabButtons.forEach(btn=>{
     btn.addEventListener('click', ()=> activateTab(btn.getAttribute('aria-controls')));
   });
+  
   document.querySelectorAll('[data-goto]').forEach(el=>{
-    el.addEventListener('click', ()=> activateTab(el.getAttribute('data-goto')));
+    el.addEventListener('click', (e)=> {
+      e.preventDefault();
+      activateTab(el.getAttribute('data-goto'));
+    });
   });
 
   // AJAX forms (Formspree)
@@ -392,19 +819,69 @@
       e.preventDefault();
       const fd = new FormData(form);
       try{
-        const res = await fetch(form.action, { method: form.method, body: fd, headers:{Accept:'application/json'} });
-        if(res.ok){ form.reset(); if(thanks) thanks.style.display='block'; }
-        else { alert('Oops! There was a problem submitting your form.'); }
-      }catch(_){ alert('Network error. Please try again.'); }
+        const res = await fetch(form.action, { 
+          method: form.method, 
+          body: fd, 
+          headers:{Accept:'application/json'} 
+        });
+        if(res.ok){ 
+          form.reset(); 
+          if(thanks) thanks.style.display='block'; 
+          setTimeout(()=>{ if(thanks) thanks.style.display='none'; }, 5000);
+        }
+        else { 
+          alert('There was a problem submitting your form. Please try again or contact us directly.'); 
+        }
+      }catch(_){ 
+        alert('Network error. Please check your connection and try again.'); 
+      }
     });
   }
+  
   wireAjaxForm('leadForm','leadThanks');
   wireAjaxForm('painterForm','painterThanks');
 
-  // Year
+  // Update copyright year
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Smooth scrolling for internal links
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('a[href^="#"]')) {
+      e.preventDefault();
+      const target = document.querySelector(e.target.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
 </script>
+
+<!-- Schema.org structured data for better SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ProQoutes",
+  "description": "Professional painting contractor connection service in Louisville KY, Henderson KY, and Evansville IN",
+  "url": "https://proqoutes.com",
+  "areaServed": [
+    {"@type": "City", "name": "Louisville", "addressRegion": "KY"},
+    {"@type": "City", "name": "Henderson", "addressRegion": "KY"},
+    {"@type": "City", "name": "Evansville", "addressRegion": "IN"}
+  ],
+  "serviceType": "Painting Contractor Referral Service",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Painting Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Interior Painting"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Exterior Painting"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Painting"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cabinet Refinishing"}}
+    ]
+  }
+}
+</script>
+
 </body>
 </html>
-
-
